@@ -1,7 +1,6 @@
 #!/bin/sh
 #
 # This is run by d-i before the partman step (e.g. d-i partman/early_command)
-
 USBDEV=$(list-devices usb-partition | sed "s/\(.*\)./\1/" | sort -u | head -1 );
 if [ -z "${USBDEV}" ]; then
     DEVICE=$(list-devices disk)
